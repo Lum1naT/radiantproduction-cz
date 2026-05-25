@@ -169,6 +169,65 @@
 		text-align: center;
 	}
 
+	.team {
+		width: min(100%, 58rem);
+		margin: clamp(3rem, 8vw, 6rem) 0 0;
+	}
+
+	.team h2 {
+		margin: 0;
+		font-family: "TRYJackAlpha", sans-serif;
+		font-weight: 400;
+		font-size: clamp(1.25rem, 3vw, 2rem);
+		line-height: 1;
+		text-transform: uppercase;
+	}
+
+	.team-grid {
+		margin: clamp(1.25rem, 3vw, 2rem) 0 0;
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: clamp(1rem, 2.5vw, 1.5rem);
+	}
+
+	.member {
+		padding: clamp(1.25rem, 3vw, 2rem);
+		border: 1px solid rgba(255, 255, 255, 0.35);
+		border-radius: 6px;
+		background: rgba(0, 0, 0, 0.2);
+		backdrop-filter: blur(10px);
+		text-align: left;
+	}
+
+	.member h3 {
+		margin: 0;
+		font-family: "TRYJackAlpha", sans-serif;
+		font-weight: 400;
+		font-size: clamp(1.5rem, 4vw, 3rem);
+		line-height: 0.9;
+	}
+
+	.member p {
+		margin: 1.25rem 0 0;
+		font-family: "Space Grotesk", Arial, sans-serif;
+		font-weight: 500;
+		font-size: clamp(0.85rem, 1.3vw, 1rem);
+		line-height: 1.5;
+		color: rgba(255, 255, 255, 0.78);
+	}
+
+	.member a {
+		display: inline-flex;
+		margin: 1.25rem 0 0;
+		color: white;
+		font-family: "Space Grotesk", Arial, sans-serif;
+		font-size: 0.85rem;
+		font-weight: 600;
+		letter-spacing: 0.08em;
+		text-decoration: none;
+		text-transform: uppercase;
+	}
+
 	.bottom-menu {
 		position: fixed;
 		left: var(--page-padding);
@@ -248,6 +307,10 @@
 			grid-template-columns: 1fr;
 		}
 
+		.team-grid {
+			grid-template-columns: 1fr;
+		}
+
 		.bottom-menu {
 			left: 1rem;
 			right: 1rem;
@@ -285,6 +348,22 @@
 				<p data-i18n="soundText">DJ sety, playback a ozvučení akcí, kde se má prostor hýbat přesně tak, jak má.</p>
 			</section>
 		</div>
+
+		<section class="team" aria-labelledby="team-title">
+			<h2 id="team-title" data-i18n="teamTitle">Tým</h2>
+			<div class="team-grid">
+				<article class="member">
+					<h3>VV9</h3>
+					<p data-i18n="vv9Text">VV9 staví zvuk na energii, rytmu a instinktu. Do studia přináší tah na nápad, cit pro atmosféru a schopnost proměnit syrový motiv v track, který má vlastní tvář.</p>
+					<a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+				</article>
+				<article class="member">
+					<h3>LUMINAT</h3>
+					<p data-i18n="luminatText">LUMINAT drží detail, prostor a finální lesk. Hledá rovnováhu mezi technikou a emocí, aby každý mix působil čistě, hluboce a pořád měl živý puls.</p>
+					<a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+				</article>
+			</div>
+		</section>
 	</div>
 
 	<nav class="bottom-menu" aria-label="Footer navigation">
@@ -304,7 +383,10 @@ const translations = {
 		productionTitle: "Production",
 		productionText: "Original instrumentals, arrangement support, and sonic direction shaped around your voice, mood, and identity.",
 		soundTitle: "DJ / Sound",
-		soundText: "DJ sets, live playback, and sound support for events where the room needs to move with precision."
+		soundText: "DJ sets, live playback, and sound support for events where the room needs to move with precision.",
+		teamTitle: "Team",
+		vv9Text: "VV9 builds sound around energy, rhythm, and instinct. He brings momentum, atmosphere, and a producer's ear for turning raw ideas into tracks with a clear identity.",
+		luminatText: "LUMINAT holds the detail, space, and final shine. He looks for the balance between technique and emotion, making every mix feel clean, deep, and alive."
 	},
 	cs: {
 		about: "Jsme produkční studio z jižních Čech, působící v Českých Budějovicích. Tvoříme nahrávky, živý zvuk i klubové momenty s důrazem na detail, atmosféru a zvuk, který funguje i mimo místnost.",
@@ -313,7 +395,10 @@ const translations = {
 		productionTitle: "Produkce",
 		productionText: "Autorské instrumentály, aranže a zvukový směr postavený kolem tvého hlasu, nálady a identity.",
 		soundTitle: "DJ / Zvuk",
-		soundText: "DJ sety, playback a ozvučení akcí, kde se má prostor hýbat přesně tak, jak má."
+		soundText: "DJ sety, playback a ozvučení akcí, kde se má prostor hýbat přesně tak, jak má.",
+		teamTitle: "Tým",
+		vv9Text: "VV9 staví zvuk na energii, rytmu a instinktu. Do studia přináší tah na nápad, cit pro atmosféru a schopnost proměnit syrový motiv v track, který má vlastní tvář.",
+		luminatText: "LUMINAT drží detail, prostor a finální lesk. Hledá rovnováhu mezi technikou a emocí, aby každý mix působil čistě, hluboce a pořád měl živý puls."
 	}
 };
 
