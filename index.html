@@ -4,6 +4,9 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>RADIANT PRODUCTION</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
 	@font-face {
@@ -61,10 +64,17 @@
 		position: relative;
 		z-index: 10;
 		width: var(--content-width);
-		min-height: 300vh;
+		min-height: 100vh;
+		min-height: 100svh;
 		margin: 0 auto;
 		color: white;
 		padding: var(--page-padding);
+		padding-bottom: calc(var(--page-padding) + 4.5rem);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
 	}
 
 	h1,
@@ -85,16 +95,164 @@
 		text-wrap: balance;
 	}
 
+	.content h2 {
+		margin: clamp(5rem, 12vw, 10rem) 0 0;
+		font-size: clamp(0.875rem, 3.5vw, 2.8rem);
+		line-height: 0.9;
+	}
+
 	.content p {
-		margin: 1rem 0 0;
+		margin: 2.5rem 0 0;
+		font-family: "TRYJackAlpha", sans-serif;
+		font-weight: 400;
 		font-size: clamp(1rem, 2vw, 1.25rem);
 		line-height: 1.5;
 	}
 
+	.content .about {
+		width: min(100%, 42rem);
+		margin: clamp(2rem, 5vw, 4rem) 0 0;
+		font-family: "Space Grotesk", Arial, sans-serif;
+		font-weight: 600;
+		font-size: clamp(0.95rem, 1.6vw, 1.15rem);
+		line-height: 1.6;
+		color: rgba(255, 255, 255, 0.82);
+	}
+
+	.services {
+		width: min(100%, 58rem);
+		margin: clamp(3rem, 8vw, 6rem) 0 0;
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: clamp(1rem, 2.5vw, 1.5rem);
+	}
+
+	.service {
+		min-height: 18rem;
+		padding: clamp(0.75rem, 2vw, 1rem);
+		border: 1px solid rgba(255, 255, 255, 0.35);
+		border-radius: 6px;
+		background: rgba(0, 0, 0, 0.2);
+		backdrop-filter: blur(10px);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.service img {
+		width: 100%;
+		aspect-ratio: 4 / 3;
+		object-fit: cover;
+		border-radius: 4px;
+		margin: 0 0 clamp(1rem, 2vw, 1.5rem);
+		filter: saturate(0.9) contrast(1.08);
+	}
+
+	.service h3 {
+		margin: 0;
+		font-family: "Space Grotesk", Arial, sans-serif;
+		font-weight: 600;
+		font-size: clamp(1rem, 2.2vw, 1.75rem);
+		line-height: 1;
+		text-align: center;
+		text-wrap: balance;
+	}
+
+	.service p {
+		margin: 1rem 0 0;
+		font-family: "Space Grotesk", Arial, sans-serif;
+		font-weight: 500;
+		font-size: clamp(0.8rem, 1.2vw, 0.95rem);
+		line-height: 1.45;
+		color: rgba(255, 255, 255, 0.78);
+		text-align: center;
+	}
+
+	.bottom-menu {
+		position: fixed;
+		left: var(--page-padding);
+		right: var(--page-padding);
+		bottom: 1rem;
+		z-index: 20;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+		font-family: "Space Grotesk", Arial, sans-serif;
+		font-size: 0.85rem;
+		font-weight: 600;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+
+	.bottom-menu a {
+		color: rgba(255, 255, 255, 0.8);
+		text-decoration: none;
+		transition: color 180ms ease, border-color 180ms ease, background 180ms ease;
+	}
+
+	.bottom-menu a:hover,
+	.bottom-menu a:focus-visible {
+		color: white;
+	}
+
+	.language-switch {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	.language-switch button {
+		min-width: 2.75rem;
+		padding: 0.5rem 0.65rem;
+		border: 1px solid rgba(255, 255, 255, 0.3);
+		border-radius: 999px;
+		color: rgba(255, 255, 255, 0.8);
+		background: rgba(0, 0, 0, 0.18);
+		backdrop-filter: blur(10px);
+		font: inherit;
+		letter-spacing: inherit;
+		text-align: center;
+		text-transform: uppercase;
+		cursor: pointer;
+		transition: color 180ms ease, border-color 180ms ease, background 180ms ease;
+	}
+
+	.language-switch button:hover,
+	.language-switch button:focus-visible {
+		color: white;
+	}
+
+	.language-switch button[aria-pressed="true"] {
+		color: white;
+		border-color: rgba(255, 255, 255, 0.78);
+		background: rgba(255, 255, 255, 0.12);
+	}
+
 	@media (max-width: 640px) {
 		.content {
-			min-height: 220vh;
 			padding-block: 1.25rem;
+			padding-bottom: 5.5rem;
+		}
+
+		.content h1 {
+			font-size: clamp(2.25rem, 9vw, 7.2rem);
+		}
+
+		.content h2 {
+			margin-top: clamp(2rem, 8vw, 4rem);
+		}
+
+		.services {
+			grid-template-columns: 1fr;
+		}
+
+		.bottom-menu {
+			left: 1rem;
+			right: 1rem;
+			bottom: 0.75rem;
+			font-size: 0.75rem;
 		}
 	}
 </style>
@@ -106,9 +264,78 @@
 	<div class="bg-layer" data-us-project="tlLwDUpH4IfyklZcDHKK"></div>
 
 	<div class="content">
-		<h1>Overlay Content</h1>
-		<p>Scroll me.</p>
+		<h1>RADIANT PRODUCTION</h1>
+		<h2>VV9 | LUMINAT</h2>
+		<p class="about" data-i18n="about">We are a production studio from South Bohemia, based around Czech Budweis. We shape records, live sound, and club-ready moments with a focus on detail, atmosphere, and a sound that carries beyond the room.</p>
+
+		<div class="services">
+			<section class="service">
+				<img src="https://unsplash.com/photos/VBkk9_UnCMI/download?force=true&w=900" alt="Close-up of a dark sound mixing console" loading="lazy">
+				<h3 data-i18n="mixingTitle">Mixing / Mastering</h3>
+				<p data-i18n="mixingText">Balanced, polished final sound for releases that translate across clubs, headphones, and streaming platforms.</p>
+			</section>
+			<section class="service">
+				<img src="https://unsplash.com/photos/p0I8Vph-vH8/download?force=true&w=900" alt="Moody music production desk with keyboard and audio equipment" loading="lazy">
+				<h3 data-i18n="productionTitle">Production</h3>
+				<p data-i18n="productionText">Original instrumentals, arrangement support, and sonic direction shaped around your voice, mood, and identity.</p>
+			</section>
+			<section class="service">
+				<img src="https://unsplash.com/photos/IJRMI1BGPbw/download?force=true&w=900" alt="DJ mixer being played in a dark room" loading="lazy">
+				<h3 data-i18n="soundTitle">DJ / Sound</h3>
+				<p data-i18n="soundText">DJ sets, live playback, and sound support for events where the room needs to move with precision.</p>
+			</section>
+		</div>
 	</div>
+
+	<nav class="bottom-menu" aria-label="Footer navigation">
+		<a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+		<div class="language-switch" aria-label="Language switch">
+			<button type="button" data-lang="en" aria-pressed="true">EN</button>
+			<button type="button" data-lang="cs" aria-pressed="false">CZ</button>
+		</div>
+	</nav>
+
+<script>
+const translations = {
+	en: {
+		about: "We are a production studio from South Bohemia, based around Czech Budweis. We shape records, live sound, and club-ready moments with a focus on detail, atmosphere, and a sound that carries beyond the room.",
+		mixingTitle: "Mixing / Mastering",
+		mixingText: "Balanced, polished final sound for releases that translate across clubs, headphones, and streaming platforms.",
+		productionTitle: "Production",
+		productionText: "Original instrumentals, arrangement support, and sonic direction shaped around your voice, mood, and identity.",
+		soundTitle: "DJ / Sound",
+		soundText: "DJ sets, live playback, and sound support for events where the room needs to move with precision."
+	},
+	cs: {
+		about: "Jsme produkční studio z jižních Čech, působící v Českých Budějovicích. Tvoříme nahrávky, živý zvuk i klubové momenty s důrazem na detail, atmosféru a zvuk, který funguje i mimo místnost.",
+		mixingTitle: "Mix / Mastering",
+		mixingText: "Vyvážený a dotažený výsledný zvuk pro releasy, které obstojí v klubu, ve sluchátkách i na streamovacích platformách.",
+		productionTitle: "Produkce",
+		productionText: "Autorské instrumentály, aranže a zvukový směr postavený kolem tvého hlasu, nálady a identity.",
+		soundTitle: "DJ / Zvuk",
+		soundText: "DJ sety, playback a ozvučení akcí, kde se má prostor hýbat přesně tak, jak má."
+	}
+};
+
+function setLanguage(language) {
+	const activeLanguage = translations[language] ? language : "en";
+
+	document.documentElement.lang = activeLanguage;
+	document.querySelectorAll("[data-i18n]").forEach((element) => {
+		element.textContent = translations[activeLanguage][element.dataset.i18n];
+	});
+	document.querySelectorAll("[data-lang]").forEach((button) => {
+		button.setAttribute("aria-pressed", String(button.dataset.lang === activeLanguage));
+	});
+	window.history.replaceState(null, "", `#${activeLanguage === "cs" ? "cz" : "en"}`);
+}
+
+document.querySelectorAll("[data-lang]").forEach((button) => {
+	button.addEventListener("click", () => setLanguage(button.dataset.lang));
+});
+
+setLanguage(window.location.hash === "#cz" ? "cs" : "en");
+</script>
 
 <script type="text/javascript">
 !function(){
