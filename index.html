@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="cs">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -266,23 +266,23 @@
 	<div class="content">
 		<h1>RADIANT PRODUCTION</h1>
 		<h2>VV9 | LUMINAT</h2>
-		<p class="about" data-i18n="about">We are a production studio from South Bohemia, based around Czech Budweis. We shape records, live sound, and club-ready moments with a focus on detail, atmosphere, and a sound that carries beyond the room.</p>
+		<p class="about" data-i18n="about">Jsme produkční studio z jižních Čech, působící v Českých Budějovicích. Tvoříme nahrávky, živý zvuk i klubové momenty s důrazem na detail, atmosféru a zvuk, který funguje i mimo místnost.</p>
 
 		<div class="services">
 			<section class="service">
 				<img src="https://unsplash.com/photos/VBkk9_UnCMI/download?force=true&w=900" alt="Close-up of a dark sound mixing console" loading="lazy">
-				<h3 data-i18n="mixingTitle">Mixing / Mastering</h3>
-				<p data-i18n="mixingText">Balanced, polished final sound for releases that translate across clubs, headphones, and streaming platforms.</p>
+				<h3 data-i18n="mixingTitle">Mix / Mastering</h3>
+				<p data-i18n="mixingText">Vyvážený a dotažený výsledný zvuk pro releasy, které obstojí v klubu, ve sluchátkách i na streamovacích platformách.</p>
 			</section>
 			<section class="service">
 				<img src="https://unsplash.com/photos/p0I8Vph-vH8/download?force=true&w=900" alt="Moody music production desk with keyboard and audio equipment" loading="lazy">
-				<h3 data-i18n="productionTitle">Production</h3>
-				<p data-i18n="productionText">Original instrumentals, arrangement support, and sonic direction shaped around your voice, mood, and identity.</p>
+				<h3 data-i18n="productionTitle">Produkce</h3>
+				<p data-i18n="productionText">Autorské instrumentály, aranže a zvukový směr postavený kolem tvého hlasu, nálady a identity.</p>
 			</section>
 			<section class="service">
 				<img src="https://unsplash.com/photos/IJRMI1BGPbw/download?force=true&w=900" alt="DJ mixer being played in a dark room" loading="lazy">
-				<h3 data-i18n="soundTitle">DJ / Sound</h3>
-				<p data-i18n="soundText">DJ sets, live playback, and sound support for events where the room needs to move with precision.</p>
+				<h3 data-i18n="soundTitle">DJ / Zvuk</h3>
+				<p data-i18n="soundText">DJ sety, playback a ozvučení akcí, kde se má prostor hýbat přesně tak, jak má.</p>
 			</section>
 		</div>
 	</div>
@@ -290,8 +290,8 @@
 	<nav class="bottom-menu" aria-label="Footer navigation">
 		<a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
 		<div class="language-switch" aria-label="Language switch">
-			<button type="button" data-lang="en" aria-pressed="true">EN</button>
-			<button type="button" data-lang="cs" aria-pressed="false">CZ</button>
+			<button type="button" data-lang="en" aria-pressed="false">EN</button>
+			<button type="button" data-lang="cs" aria-pressed="true">CZ</button>
 		</div>
 	</nav>
 
@@ -334,7 +334,7 @@ document.querySelectorAll("[data-lang]").forEach((button) => {
 	button.addEventListener("click", () => setLanguage(button.dataset.lang));
 });
 
-setLanguage(window.location.hash === "#cz" ? "cs" : "en");
+setLanguage(window.location.hash === "#en" ? "en" : "cs");
 </script>
 
 <script type="text/javascript">
